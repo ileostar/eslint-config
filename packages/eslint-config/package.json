@@ -1,6 +1,6 @@
 {
   "name": "@ileostar/eslint-config",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "description": "ileostar's ESLint config",
   "author": "ileostar <245956856@qq.com> (https://github.com/ileostar)",
   "license": "MIT",
