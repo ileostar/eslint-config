@@ -1,0 +1,33 @@
+{
+  "name": "@ileostar/eslint-config-monorepo",
+  "private": true,
+  "version": "0.1.4",
+  "description": "a custom eslint configuration",
+  "keywords": [
+    "eslint",
+    "monorepo",
+    "ileostar"
+  ],
+  "packageManager": "pnpm@8.7.6",
+  "author": "ileostar <245956856@qq.com> (https://github.com/ileostar)",
+  "license": "MIT",
+  "main": "index.js",
+  "publishConfig": {
+    "git-checks": false
+  },
+  "scripts": {
+    "lint": "pnpm -r run stub && eslint .",
+    "test": "pnpm -r run test",
+    "build": "pnpm -r run build",
+    "prepare": "pnpm -r run stub",
+    "release": "bumpp -r && pnpm -r publish --no-git-checks --access public"
+  },
+  "devDependencies": {
+    "@ileostar/eslint-config": "workspace:*",
+    "bumpp": "^9.2.0",
+    "eslint": "^8.49.0",
+    "eslint-plugin-ileostar": "link:./packages/eslint-plugin-ileostar",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.2.2"
+  }
+}

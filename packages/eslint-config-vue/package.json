@@ -1,0 +1,26 @@
+{
+  "name": "@ileostar/eslint-config-vue",
+  "version": "0.1.4",
+  "description": "",
+  "author": "ileostar <245956856@qq.com> (https://github.com/ileostar)",
+  "license": "MIT",
+  "keywords": [
+    "eslint-config"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  },
+  "dependencies": {
+    "@ileostar/eslint-config-basic": "workspace:*",
+    "@ileostar/eslint-config-ts": "workspace:*",
+    "eslint-plugin-vue": "^9.17.0",
+    "local-pkg": "^0.4.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.49.0"
+  }
+}
