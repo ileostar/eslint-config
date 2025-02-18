@@ -1,0 +1,67 @@
+{
+  "name": "@ileostar/eslint-config",
+  "version": "0.5.0",
+  "description": "The eslint config for ileostar's projects",
+  "license": "MIT",
+  "author": "ileostar <hi@leostar.top> (https://github.com/ileostar/)",
+  "homepage": "https://github.com/ileostar/eslint-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ileostar/eslint-config.git"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "concurrently \"tsup --watch\" \"eslint-config-inspector\"",
+    "lint": "eslint . --max-warnings 0",
+    "lint:fix": "eslint --fix .",
+    "type-check": "tsc --noEmit"
+  },
+  "types": "./dist/index.d.ts",
+  "dependencies": {
+    "@eslint-react/eslint-plugin": "^1.22.1",
+    "@eslint/js": "^9.17.0",
+    "@next/eslint-plugin-next": "^15.1.5",
+    "@typescript-eslint/eslint-plugin": "^8.19.0",
+    "@typescript-eslint/parser": "^8.18.2",
+    "eslint-config-flat-gitignore": "^1.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-playwright": "^2.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-sonarjs": "^3.0.1",
+    "eslint-plugin-tailwindcss": "^3.17.5",
+    "eslint-plugin-testing-library": "^7.1.1",
+    "eslint-plugin-turbo": "^2.3.3",
+    "eslint-plugin-unicorn": "^56.0.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "globals": "^15.14.0",
+    "local-pkg": "^1.0.0"
+  },
+  "peerDependencies": {
+    "eslint": "^9.10.0"
+  },
+  "devDependencies": {
+    "@eslint/config-inspector": "^1.0.0",
+    "@types/eslint": "^9.6.1",
+    "@types/node": "^22.13.4",
+    "eslint": "^9.17.0",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "lint-staged": {
+    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
+  }
+}
