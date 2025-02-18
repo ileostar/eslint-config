@@ -1,6 +1,5 @@
 # deps
 node_modules/
 
-# build
-dist/
-
+# eslint build
+.eslint-config-inspector
