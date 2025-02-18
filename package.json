@@ -1,7 +1,7 @@
 {
   "name": "@ileostar/eslint-config",
   "type": "module",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "packageManager": "pnpm@10.4.1",
   "description": "LeoStar's ESLint config",
   "author": "LeoStar <hi@leostar.top> (https://github.com/ileostar/)",
