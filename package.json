@@ -17,10 +17,16 @@
   ],
   "scripts": {
     "build": "tsup",
-    "dev": "concurrently \"tsup --watch\" \"eslint-config-inspector\"",
+    "watch": "tsup --watch",
+    "dev": "npx @eslint/config-inspector --config eslint.config.ts",
+    "build:inspector": "pnpm build && npx @eslint/config-inspector build",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "eslint --fix .",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "prepack": "nr build",
+    "release": "bumpp && pnpm publish",
+    "up": "taze major -I",
+    "prepare": "simple-git-hooks"
   },
   "types": "./dist/index.d.ts",
   "dependencies": {
@@ -29,6 +35,7 @@
     "@next/eslint-plugin-next": "^15.1.5",
     "@typescript-eslint/eslint-plugin": "^8.19.0",
     "@typescript-eslint/parser": "^8.18.2",
+    "eslint": "^9.10.0",
     "eslint-config-flat-gitignore": "^1.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
@@ -54,10 +61,7 @@
     "@eslint/config-inspector": "^1.0.0",
     "@types/eslint": "^9.6.1",
     "@types/node": "^22.13.4",
-    "bumpp": "^10.0.3",
     "eslint": "^9.17.0",
-    "simple-git-hooks": "^2.11.1",
-    "taze": "^18.6.0",
     "tsup": "^8.3.6",
     "typescript": "^5.7.3"
   },
@@ -66,5 +70,8 @@
   },
   "lint-staged": {
     "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
   }
 }
