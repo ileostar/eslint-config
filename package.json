@@ -29,7 +29,7 @@
     "lint": "eslint .",
     "typegen": "tsx scripts/typegen.ts",
     "prepack": "nr build",
-    "release": "bumpp && pnpm publish",
+    "release": "bumpp && npm publish",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks"

@@ -10,7 +10,7 @@ import { pluginPerfectionist } from '../plugins'
 export async function perfectionist(): Promise<TypedFlatConfigItem[]> {
   return [
     {
-      name: 'antfu/perfectionist/setup',
+      name: 'leostar: perfectionist/setup',
       plugins: {
         perfectionist: pluginPerfectionist,
       },
