@@ -1,20 +1,35 @@
-import type { Linter } from 'eslint'
+import type { OptionsUnicorn, TypedFlatConfigItem } from '../types'
 
-import { unicornPlugin } from '../plugins'
+import { pluginUnicorn } from '../plugins'
 
-export const unicorn: Linter.Config[] = [
-  {
-    name: 'leostar:unicorn',
-    plugins: {
-      unicorn: unicornPlugin
+export async function unicorn(options: OptionsUnicorn = {}): Promise<TypedFlatConfigItem[]> {
+  return [
+    {
+      name: 'antfu/unicorn/rules',
+      plugins: {
+        unicorn: pluginUnicorn,
+      },
+      rules: {
+        ...(options.allRecommended
+          ? pluginUnicorn.configs['flat/recommended'].rules
+          : {
+              'unicorn/consistent-empty-array-spread': 'error',
+              'unicorn/error-message': 'error',
+              'unicorn/escape-case': 'error',
+              'unicorn/new-for-builtins': 'error',
+              'unicorn/no-instanceof-array': 'error',
+              'unicorn/no-new-array': 'error',
+              'unicorn/no-new-buffer': 'error',
+              'unicorn/number-literal-case': 'error',
+              'unicorn/prefer-dom-node-text-content': 'error',
+              'unicorn/prefer-includes': 'error',
+              'unicorn/prefer-node-protocol': 'error',
+              'unicorn/prefer-number-properties': 'error',
+              'unicorn/prefer-string-starts-ends-with': 'error',
+              'unicorn/prefer-type-error': 'error',
+              'unicorn/throw-new-error': 'error',
+            }),
+      },
     },
-    rules: {
-      ...unicornPlugin.configs.recommended.rules,
-      'unicorn/no-await-expression-member': 'off',
-      'unicorn/no-null': 'off',
-      'unicorn/prefer-export-from': ['error', { ignoreUsedVariables: true }],
-      'unicorn/prevent-abbreviations': 'off',
-      'unicorn/prefer-string-raw': 'off'
-    }
-  }
-]
+  ]
+}

@@ -1,13 +1,18 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "target": "ESNext",
+    "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "exclude": ["node_modules"],
-  "include": ["**/*.ts", "eslint.config.ts"]
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "./fixtures/**/*.*",
+    "./_fixtures/**/*.*"
+  ]
 }

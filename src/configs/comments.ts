@@ -1,17 +1,20 @@
-import type { Linter } from 'eslint'
+import type { TypedFlatConfigItem } from '../types'
 
-import { eslintCommentsPlugin } from '../plugins'
+import { pluginComments } from '../plugins'
 
-export const comments: Linter.Config[] = [
-  {
-    name: 'leostar:comments',
-    plugins: {
-      'eslint-comments': eslintCommentsPlugin
+export async function comments(): Promise<TypedFlatConfigItem[]> {
+  return [
+    {
+      name: 'antfu/eslint-comments/rules',
+      plugins: {
+        'eslint-comments': pluginComments,
+      },
+      rules: {
+        'eslint-comments/no-aggregating-enable': 'error',
+        'eslint-comments/no-duplicate-disable': 'error',
+        'eslint-comments/no-unlimited-disable': 'error',
+        'eslint-comments/no-unused-enable': 'error',
+      },
     },
-    rules: {
-      ...eslintCommentsPlugin.configs.recommended.rules,
-
-      'eslint-comments/require-description': 'error'
-    }
-  }
-]
+  ]
+}

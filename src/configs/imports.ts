@@ -1,23 +1,38 @@
-import type { Linter } from 'eslint'
+import type { OptionsStylistic, TypedFlatConfigItem } from '../types'
 
-import { importPlugin } from '../plugins'
+import { pluginAntfu, pluginImport } from '../plugins'
 
-export const imports: Linter.Config[] = [
-  {
-    name: 'leostar:imports',
-    plugins: {
-      import: importPlugin as unknown as Record<string, unknown>
+export async function imports(options: OptionsStylistic = {}): Promise<TypedFlatConfigItem[]> {
+  const {
+    stylistic = true,
+  } = options
+
+  return [
+    {
+      name: 'antfu/imports/rules',
+      plugins: {
+        antfu: pluginAntfu,
+        import: pluginImport,
+      },
+      rules: {
+        'antfu/import-dedupe': 'error',
+        'antfu/no-import-dist': 'error',
+        'antfu/no-import-node-modules-by-path': 'error',
+
+        'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
+        'import/first': 'error',
+        'import/no-duplicates': 'error',
+        'import/no-mutable-exports': 'error',
+        'import/no-named-default': 'error',
+        'import/no-self-import': 'error',
+        'import/no-webpack-loader-syntax': 'error',
+
+        ...stylistic
+          ? {
+              'import/newline-after-import': ['error', { count: 1 }],
+            }
+          : {},
+      },
     },
-    rules: {
-      'import/no-amd': 'error',
-      'import/no-commonjs': 'error',
-      'import/first': 'error',
-      'import/no-duplicates': 'error',
-      'import/no-mutable-exports': 'error',
-      'import/no-named-default': 'error',
-      'import/no-self-import': 'error',
-      'import/no-webpack-loader-syntax': 'error',
-      'import/newline-after-import': ['error', { count: 1 }]
-    }
-  }
-]
+  ]
+}
