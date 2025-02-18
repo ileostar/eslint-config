@@ -1,4 +1,4 @@
-import leostar from './dist/index.js'
+import leostar from './src/index'
 
 export default leostar({
   project: './tsconfig.json',

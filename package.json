@@ -54,6 +54,7 @@
     "@eslint/config-inspector": "^1.0.0",
     "@types/eslint": "^9.6.1",
     "@types/node": "^22.13.4",
+    "bumpp": "^10.0.3",
     "eslint": "^9.17.0",
     "simple-git-hooks": "^2.11.1",
     "taze": "^18.6.0",

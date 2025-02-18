@@ -39,5 +39,5 @@
     }
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "eslint.config.mjs"]
+  "include": ["**/*.ts", "eslint.config.ts"]
 }
