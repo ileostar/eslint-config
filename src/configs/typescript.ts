@@ -93,7 +93,7 @@ export async function typescript(
           ...parserOptions as any,
         },
       },
-      name: `antfu/typescript/${typeAware ? 'type-aware-parser' : 'parser'}`,
+      name: `leostar: typescript/${typeAware ? 'type-aware-parser' : 'parser'}`,
     }
   }
 
