@@ -1,3 +1,19 @@
 # @ileostar/eslint-config
 
-⚠️ Warning: This package is intended for honghong.me's internal use. It might release breaking changes frequently and not be documented. Use it at your own risk.
+## Usage
+
+```javascript
+// eslint.config.mjs
+import leostar from '@ileostar/eslint-config'
+
+export default leostar({
+  project: './tsconfig.json',
+  tsconfigRootDir: import.meta.dirname,
+  react: true,
+  next: true,
+  playwright: true,
+  testingLibrary: true,
+  turbo: true,
+  typescript: true
+})
+```
