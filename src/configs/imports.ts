@@ -4,7 +4,7 @@ import { importPlugin } from '@/plugins'
 
 export const imports: Linter.Config[] = [
   {
-    name: 'ileostar:imports',
+    name: 'leostar:imports',
     plugins: {
       import: importPlugin as unknown as Record<string, unknown>
     },

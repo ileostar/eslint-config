@@ -37,7 +37,7 @@ export type Configs = Linter.Config[]
 const hasTypeScript = isPackageExists('typescript')
 const hasTurbo = isPackageExists('turbo')
 
-const ileostar = async (options: Options = {}, ...userConfigs: Configs): Promise<Configs> => {
+const leostar = async (options: Options = {}, ...userConfigs: Configs): Promise<Configs> => {
   const {
     typescript: enableTypeScript = hasTypeScript,
     react: enableReact = false,
@@ -98,4 +98,4 @@ const ileostar = async (options: Options = {}, ...userConfigs: Configs): Promise
 
 export * from './globs'
 
-export default ileostar
+export default leostar

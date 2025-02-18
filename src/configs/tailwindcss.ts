@@ -5,7 +5,7 @@ console.log('Hello from tailwindcss.ts')
 
 // export const tailwindcss: Linter.Config[] = [
 //   {
-//     name: 'ileostar:tailwindcss',
+//     name: 'leostar:tailwindcss',
 //     plugins: {
 //       tailwindcss: tailwindcssPlugin
 //     },

@@ -6,7 +6,7 @@ import { typescriptParser, typescriptPlugin } from '@/plugins'
 
 export const typescript = (options?: Options): Linter.Config[] => [
   {
-    name: 'ileostar:typescript',
+    name: 'leostar:typescript',
     plugins: {
       '@typescript-eslint': typescriptPlugin as unknown as Record<string, unknown>
     },

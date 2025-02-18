@@ -4,7 +4,7 @@ import { turboPlugin } from '@/plugins'
 
 export const turbo: Linter.Config[] = [
   {
-    name: 'ileostar:turbo',
+    name: 'leostar:turbo',
     plugins: {
       turbo: turboPlugin
     },

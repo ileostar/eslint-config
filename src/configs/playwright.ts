@@ -5,7 +5,7 @@ import { playwrightPlugin } from '@/plugins'
 
 export const playwright: Linter.Config[] = [
   {
-    name: 'ileostar:playwright',
+    name: 'leostar:playwright',
     ...playwrightPlugin.configs['flat/recommended'],
     files: [GLOB_E2E]
   }

@@ -4,7 +4,7 @@ import { unicornPlugin } from '@/plugins'
 
 export const unicorn: Linter.Config[] = [
   {
-    name: 'ileostar:unicorn',
+    name: 'leostar:unicorn',
     plugins: {
       unicorn: unicornPlugin
     },

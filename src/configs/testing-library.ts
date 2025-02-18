@@ -5,7 +5,7 @@ import { testingLibraryPlugin } from '@/plugins'
 
 export const testingLibrary: Linter.Config[] = [
   {
-    name: 'ileostar:testing-library',
+    name: 'leostar:testing-library',
     plugins: {
       'testing-library': testingLibraryPlugin
     },

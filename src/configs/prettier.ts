@@ -4,7 +4,7 @@ import { prettierConfig, prettierPlugin } from '@/plugins'
 
 export const prettier: Linter.Config[] = [
   {
-    name: 'ileostar:prettier',
+    name: 'leostar:prettier',
     plugins: {
       prettier: prettierPlugin
     },

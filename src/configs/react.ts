@@ -9,7 +9,7 @@ export const react = (options?: Options): Linter.Config[] => {
 
   return [
     {
-      name: 'ileostar:react',
+      name: 'leostar:react',
       plugins: {
         ...(reactPluginAll.plugins as unknown as Record<string, ESLint.Plugin>),
         'react-hooks': reactHooksPlugin,
